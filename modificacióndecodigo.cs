@@ -64,7 +64,7 @@ class Cuarto
         return true;
     }
 
-    // Adaptación de AplicarDescuento con la validación exigida
+    
     public void RebajarTarifa(double porcentaje)
     {
         if (porcentaje > 0 && porcentaje <= 100)
@@ -83,7 +83,7 @@ class Cuarto
         }
     }
 
-    // Adaptación de ObtenerDatosResumen con el formato solicitado
+    
     public string GenerarResumenCorto()
     {
         string estado = EstaLibre ? "Libre" : $"Ocupada por: {NombreHuesped}";
@@ -111,7 +111,7 @@ class Program
         
         Console.WriteLine("Simulación completada con éxito.\n");
 
-        // Implementación del ciclo foreach para métricas (Requisito 2A y 2B)
+        
         int cuartosLibres = 0;
         int cuartosOcupados = 0;
         double sumaTarifas = 0;
@@ -120,7 +120,7 @@ class Program
         
         foreach (var cuarto in listaCuartos)
         {
-            // Imprimir el formato corto (Requisito 1B)
+            
             Console.WriteLine(cuarto.GenerarResumenCorto());
 
             // Contar libres y ocupadas
@@ -133,11 +133,11 @@ class Program
                 cuartosOcupados++;
             }
 
-            // Sumar tarifas para el promedio final
+            
             sumaTarifas += cuarto.TarifaNocturna;
         }
 
-        // Calcular el promedio (Requisito 2B)
+        
         double tarifaPromedio = sumaTarifas / listaCuartos.Count;
 
         Console.WriteLine("\n*** MÉTRICAS FINALES DEL HOTEL ***");
